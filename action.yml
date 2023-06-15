@@ -1,17 +1,16 @@
-name: 'TypeScript Error Reporter'
-description: 'Report type check result on PR diff view.'
-author: 'andoshin11'
+name: "TypeScript Error Reporter"
+description: "Report type check result on PR diff view."
+maintainer: "gozala"
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: "node16"
+  main: "dist/index.js"
 branding:
-  icon: 'check-circle'
-  color: 'blue'
+  icon: "check-circle"
+  color: "blue"
 inputs:
   project:
-    description: 'Optional project path.'
+    description: "Optional project path."
     required: false
   error_fail_threshold:
-    description: 'Optional number of errors threshold at which this step fails.'
+    description: "Optional number of errors threshold at which this step fails."
     required: false
-  
