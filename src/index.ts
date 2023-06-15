@@ -110,14 +110,12 @@ const loadTS = (projectPath: string): TS => {
   try {
     const require = Module.createRequire(projectPath)
     const ts = require("typescript")
-    console.log(`Using local typescript@${ts.version}`)
     return ts
   } catch (error) {
-    const ts = require("typescript")
-    console.log(
-      `Failed to find project specific typescript, falling back to bundled typescript@${ts.version}`
+    throw Object.assign(
+      new Error(`Failed to find project specific typescript at ${projectPath}`),
+      { cause: error }
     )
-    return ts
   }
 }
 
