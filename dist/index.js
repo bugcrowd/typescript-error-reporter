@@ -430,7 +430,6 @@ const reporter_1 = __nccwpck_require__(172);
 async function main() {
     try {
         const project = (0, core_1.getInput)("project") || "tsconfig.json";
-        console.log({ project });
         const projectPath = resolveProjectPath(path.resolve(process.cwd(), project));
         if (projectPath == null) {
             throw new Error(`No valid typescript project was not found at: ${projectPath}`);
